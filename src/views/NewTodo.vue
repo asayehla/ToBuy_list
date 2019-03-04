@@ -5,9 +5,10 @@
     </header>
     <section class="content">
       <input type="text" v-model="newTodo">
+      <p>{{newTodo.length}} /30 tecken</p>
     </section>
     <footer>
-      <a href="#" class="btn">Add new item</a>
+      <a href="#" class="btn" @click="addTodo">Add new item</a>
     </footer>
   </main>
 </template>

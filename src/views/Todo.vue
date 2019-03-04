@@ -1,13 +1,13 @@
 <template>
 <main id="todos">
   <header>
-    <h1>Inköp!</h1>
+    <h1>Ditt och datt</h1>
   </header>
   <section class="content">
-    <todo />
+    <todo v-for="(todoData, index) in todos" :key="index" : todo="todoData" : index="index"/>
   </section>
   <footer>
-    <a href="#" class="btn">Slide to add new</a>
+    <a href="#" class="btn" v-touch:swipe.left="swipe">Slide to add new</a>
   </footer>
 </main>
 </template>
@@ -25,22 +25,11 @@ export default {
 
 <style lang="scss">
 #todos {
-
-
     header {
-          h1 {
-              margin: 0;
-              padding: 0;
-              font-family: 'Julius Sans One', sans-serif, 'Trebuchet MS';
-              -webkit-font-smoothing: antialiased;
-              -moz-osx-font-smoothing: grayscale;
-              font-size: 3rem;
-              text-shadow: 3px 3px 0 rgb(66, 65, 66);
-              }
-            p {
-                margin: 0;
-                font-weight: 700;
-            }
+        p {
+            margin: 0;
+            font-weight: 700;
+        }
     }
 
     footer {
