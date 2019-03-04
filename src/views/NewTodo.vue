@@ -20,7 +20,20 @@ export default {
     return {
       newTodo: ''
     }
+  },
+  methods: {
+    addTodo() {
+      let todo = {
+        done: false,
+        text: this.NewTodo
+      }
+
+      this.$store.dispatch('newTodo', todo);
+      this.newTodo = '';
+      this.$store.commit('swipe', 0);
+    }
   }
+
 }
 </script>
 

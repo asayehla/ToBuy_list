@@ -1,9 +1,7 @@
 <template lang="html">
-  <article class="todo">
+  <article class="todo" :class="{ completed : todo.done }" v-touch:swipe="completed">
     <aside class="done">
-      <p><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M25.0649 2L9.77204 17.2929C9.38152 17.6834 8.74835 17.6834 8.35783 17.2929L2 10.9351" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></p>
+      <p></p>
     </aside>
     <section class="text">
       {{todo.text}}
@@ -14,15 +12,13 @@
 <script>
 export default {
   name: 'todo',
-  data() {
-    return {
-      todo: {
-        text: 'ingefärsshot',
-        done: false
-      },
-      url: process.env.VUE_APP_ALWAYS
+  props: ['todo, index'],
+  methods: {
+    completed() {
+      this.$store.commit('updateTodo', this.index);
     }
   }
+  //  url: process.env.VUE_APP_ALWAYS
 }
 </script>
 
