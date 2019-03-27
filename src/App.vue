@@ -1,5 +1,5 @@
 <template>
-<div id="app">
+  <div id="app">
   <section class="slider" :class="'slide-' + activeSlide">
     <todos />
     <newtodo />
@@ -8,22 +8,23 @@
 </template>
 
 <script>
-import todos from './views/Todo.vue'
+import todos from './views/Todos.vue'
 import newtodo from './views/NewTodo.vue'
 
 export default {
   name: 'app',
+  /*
   computed: {
     activeSlide() {
       return this.$store.state.activeSlide;
     }
-  },
+  },*/
   components: {
     todos,
     newtodo
   },
   beforeMount() {
-    this.$store.dispatch('getTodos')
+   this.$store.dispatch('getTodos')
   }
 }
 </script>

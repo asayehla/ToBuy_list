@@ -15,69 +15,65 @@
 
 <script>
 export default {
-  name: 'newTodo',
+  name: "newTodo",
   data() {
     return {
-      newTodo: ''
-    }
+      newTodo: ""
+    };
   },
   methods: {
     addTodo() {
       let todo = {
         done: false,
         text: this.NewTodo
-      }
+      };
 
-      this.$store.dispatch('newTodo', todo);
-      this.newTodo = '';
-      this.$store.commit('swipe', 0);
+      this.$store.dispatch("newTodo", todo);
+      this.newTodo = "";
+      this.$store.commit("swipe", 0);
     }
   }
-
-}
+};
 </script>
 
 <style lang="scss">
 #new-todo {
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        input {
-            font-size: 1.4rem;
-            font-weight: 700;
-            border: none;
-            appearance: none;
-            background: none;
-            text-align: center;
-            padding: 0.25rem;
-        }
-        &:focus {
-            outline: none;
-        }
+    input {
+      font-size: 1.4rem;
+      font-weight: 700;
+      border: none;
+      appearance: none;
+      background: none;
+      text-align: center;
+      padding: 0.25rem;
     }
-
+    &:focus {
+      outline: none;
+    }
+  }
 }
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  a.btn {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-
-    a.btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(223, 107, 57);
-        border: rgb(23, 23, 23) 2px solid;
-        color: white;
-        font-weight: 700;
-        text-decoration: none;
-        height: 3rem;
-        border-radius: 99rem;
-
-    }
-
+    justify-content: center;
+    align-items: center;
+    background: rgb(223, 107, 57);
+    border: rgb(23, 23, 23) 2px solid;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    height: 3rem;
+    border-radius: 99rem;
+  }
 }
 </style>
